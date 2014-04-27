@@ -31,3 +31,32 @@ cacheSolve <- function(x, ...) {
         x$setsolve(i)
         i
 }
+
+# UnitTest Results
+##> c1 <- c(2, 4, 3, 1, 5, 7,0,8,9)
+##> m1 <- makeCacheMatrix(c1)
+##Error in makeCacheMatrix(c1) : Input is expected to be a matrix
+##> B1 = matrix(c(2, 4, 3, 1, 5, 7), nrow=3, ncol=2)
+##> m1 <- makeCacheMatrix(B1)
+##Error in makeCacheMatrix(B1) : Input is expected to be a square matrix
+##> B = matrix(c(2, 4, 3, 1, 5, 7,0,8,9), nrow=3, ncol=3)
+##> solve(B)
+##           [,1]       [,2]       [,3]
+##[1,]  0.3235294  0.2647059 -0.2352941
+##[2,]  0.3529412 -0.5294118  0.4705882
+##[3,] -0.3823529  0.3235294 -0.1764706
+##> class(B)
+##[1] "matrix"
+##> m1 <- makeCacheMatrix(B)
+##> cacheSolve(m1)
+##           [,1]       [,2]       [,3]
+##[1,]  0.3235294  0.2647059 -0.2352941
+##[2,]  0.3529412 -0.5294118  0.4705882
+##[3,] -0.3823529  0.3235294 -0.1764706
+##> cacheSolve(m1)
+##getting cached data
+##           [,1]       [,2]       [,3]
+##[1,]  0.3235294  0.2647059 -0.2352941
+##[2,]  0.3529412 -0.5294118  0.4705882
+##[3,] -0.3823529  0.3235294 -0.1764706
+##
